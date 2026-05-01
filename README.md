@@ -66,6 +66,14 @@
     └── slides_present.tex
 ```
 
+- `tex/` contains the report and slide tex files `report.tex`, `slides_present.tex`, and `slides_handout.tex`, as well as the .pdf output of compiling these files, the bibliography information file `biblio.bib`, the bibilography format specification file `abbrvnat-maxbibnames4_sortnumeric.bst`, slide formatting file `slides_formatting.tex`, and slides content file `slides_content.tex`
+- `data/` contains the combined output of all genes for each of the four xWASs in the `*_results.txt` files, the output of the pathDIP enrichment analysis files `*_pathDIP_Enrichment_analysis_for_Panther_Pathway.txt`, and two annotation files `ProteinAbundance_ROSMAP_annot.txt` and `TranscriptAbundance_ROSMAP_annot.txt`.
+- `source/` contains R-scripts used for this report: `asso_study_results.R`, `pathDIP_results.R`, and `manhattan_plot.R`.
+- `tables/` contains tex files of tables output by the `asso_study_results.R` and `pathDIP_results.R` scripts
+- `figs/` contains figure files output by the `asso_study_results.R` and `pathDIP_results.R` scripts as well as some additional figures
+- `drawio_figs/` contains additional chart figures
+
+
 ---
 
 
@@ -111,7 +119,7 @@ pdflatex -interaction=nonstopmode slides_present.tex
 
 ---
 
-## Session Info
+## R Session Info
 
 ```R
 R version 4.5.2 (2025-10-31)
