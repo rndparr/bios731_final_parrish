@@ -2,31 +2,40 @@
 #############################
 ## LIBRARIES
 
+# also requires: here
+
 # all plots
 library(ggplot2)
-
-# Venn diagram
-library(ggVennDiagram)
-
-# dataframe manipulation
-library(reshape2)
 
 # Manhattan plot
 library(ggrepel)
 library(ggnewscale)
 
-# Manhattan plot script
-source(here::here('source', 'manhattan_plot.R'))
+# Venn diagram
+library(ggVennDiagram)
+
+# here function
+library(here)
+
+# dataframe manipulation
+library(reshape2)
 
 # LaTeX tables
 library(xtable)
+
+
+#############################
+## SOURCE
+
+# Manhattan plot script
+source(here('source', 'manhattan_plot.R'))
 
 #############################
 ## ANNOTATION
 
 ## function to get annotation dataframe
 get_annot_data <- function(filename){
-	annot <- read.csv(here::here('data', filename),
+	annot <- read.csv(here('data', filename),
 		sep='\t', header=TRUE	,
 		colClasses=c('character', rep('integer', 2), 'character')
 	)
@@ -95,7 +104,7 @@ dat_cols <- c('GeneName', 'Z', 'PVAL', 'N_with_weight',
 	'sum_cpp_cis', 'sum_cpp_trans')
 
 # cis-PWAS
-c_pwas <- read.csv(here::here('data', 'cis_PWAS_results.txt'),
+c_pwas <- read.csv(here('data', 'cis_PWAS_results.txt'),
 	sep='\t', header=TRUE)
 colnames(c_pwas) <- dat_cols
 c_pwas$snp_type <- 'cis'
@@ -105,7 +114,7 @@ c_pwas[, c('chisq', 'adj_chisq', 'adj_PVAL', 'lambda')] <- GC_adjust(c_pwas$PVAL
 c_pwas$zero_cis <- FALSE
 
 # cis/trans-PWAS
-ct_pwas <- read.csv(here::here('data', 'cistrans_PWAS_results.txt'),
+ct_pwas <- read.csv(here('data', 'cistrans_PWAS_results.txt'),
 	sep='\t', header=TRUE)
 colnames(ct_pwas) <- c(dat_cols, 'zero_cis')
 ct_pwas$snp_type <- 'cis/trans'
@@ -114,7 +123,7 @@ ct_pwas$method <- 'cis/trans-PWAS'
 ct_pwas[, c('chisq', 'adj_chisq', 'adj_PVAL', 'lambda')] <- GC_adjust(ct_pwas$PVAL)
 
 # cis-TWAS
-c_twas <- read.csv(here::here('data', 'cis_TWAS_results.txt'),
+c_twas <- read.csv(here('data', 'cis_TWAS_results.txt'),
 	sep='\t', header=TRUE)
 colnames(c_twas)[1:3] <- dat_cols
 c_twas$snp_type <- 'cis'
@@ -124,7 +133,7 @@ c_twas[, c('chisq', 'adj_chisq', 'adj_PVAL', 'lambda')] <- GC_adjust(c_twas$PVAL
 c_twas$zero_cis <- FALSE
 
 # cis/trans-TWAS
-ct_twas <- read.csv(here::here('data', 'cistrans_TWAS_results.txt'),
+ct_twas <- read.csv(here('data', 'cistrans_TWAS_results.txt'),
 	sep='\t', header=TRUE)
 colnames(ct_twas)[1:3] <- dat_cols
 ct_twas$snp_type <- 'cis/trans'
@@ -228,10 +237,10 @@ print(res_xtable,
 	sanitize.text.function = function(x){x},
 	caption.placement = 'top',
 	append = FALSE,
-	file = here::here('tex', 'xtables.tex'))
+	file = here('tex', 'xtables.tex'))
 
 cat('\\pagebreak\n\n', append = TRUE,
-	file = here::here('tex', 'xtables.tex'))
+	file = here('tex', 'xtables.tex'))
 
 #############################
 ## RISK GENES TABLES
@@ -263,10 +272,10 @@ for (method in unique(sigtab$method)){
 		sanitize.text.function = function(x){x},
 		caption.placement = 'top',
 		append = TRUE,
-		file = here::here('tex', 'xtables.tex'))
+		file = here('tex', 'xtables.tex'))
 
 	cat('\\pagebreak\n\n', append = TRUE,
-		file = here::here('tex', 'xtables.tex'))
+		file = here('tex', 'xtables.tex'))
 }
 
 #############################
@@ -281,7 +290,7 @@ p <- ggVennDiagram(vennlist, label_alpha=0, label='count') +
 	theme(legend.pos='None') + 
 	scale_fill_gradient(low='white', high='#D92B26') +
 	scale_x_continuous(expand=expansion(mult=0.11)) # expand so long labels fit
-ggsave(here::here('figs', 'venn.pdf'), p)
+ggsave(here('figs', 'venn.pdf'), p)
 
 
 #############################
@@ -358,7 +367,7 @@ p_slides <- manhattan_plot(mdat,
 			strip.text = element_text(color='#FAFAFA', size=rel(0.9)), 
 			strip.placement = 'outside') + 
 	facet_grid(snp_type ~ method_type)
-ggsave(here::here('figs', 'manplots_slides.png'), p_slides, height = 5, width = 8.5, dpi=400)
+ggsave(here('figs', 'manplots_slides.png'), p_slides, height = 5, width = 8.5, dpi=400)
 
 
 # plot for report
@@ -367,5 +376,5 @@ p_report <- manhattan_plot(mdat,
 		max_overlaps=100, 
 		label_force=4) + 
 facet_grid(snp_type ~ method_type)
-ggsave(here::here('figs', 'manplots_report.png'), p_report, height = 5, width = 8.5, dpi=400)
+ggsave(here('figs', 'manplots_report.png'), p_report, height = 5, width = 8.5, dpi=400)
 
