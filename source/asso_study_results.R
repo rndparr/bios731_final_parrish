@@ -125,7 +125,7 @@ ct_pwas[, c('chisq', 'adj_chisq', 'adj_PVAL', 'lambda')] <- GC_adjust(ct_pwas$PV
 # cis-TWAS
 c_twas <- read.csv(here('data', 'cis_TWAS_results.txt'),
 	sep='\t', header=TRUE)
-colnames(c_twas)[1:3] <- dat_cols
+colnames(c_twas)[1:3] <- dat_cols[1:3]
 c_twas$snp_type <- 'cis'
 c_twas$method_type <- 'TWAS'
 c_twas$method <- 'cis-TWAS'
@@ -135,7 +135,7 @@ c_twas$zero_cis <- FALSE
 # cis/trans-TWAS
 ct_twas <- read.csv(here('data', 'cistrans_TWAS_results.txt'),
 	sep='\t', header=TRUE)
-colnames(ct_twas)[1:3] <- dat_cols
+colnames(ct_twas)[1:3] <- dat_cols[1:3]
 ct_twas$snp_type <- 'cis/trans'
 ct_twas$method_type <- 'TWAS'
 ct_twas$method <- 'cis/trans-TWAS'
@@ -217,16 +217,29 @@ res_dat <- cbind(
 	# number of NA genes
 	tapply(dat$sig, dat$method, function(x) {sum(is.na(x))}), 
 	# trans only genes
-	tapply(as.integer(dat$zero_cis), dat$method, sum, na.rm=TRUE),
-	# lambda_genomic_control
-	tapply(dat$lambda, dat$method, unique)
+	tapply(as.integer(dat$zero_cis), dat$method, sum, na.rm=TRUE)
 	) |> as.data.frame()
-colnames(res_dat) <- c('total_genes', 'sig_genes', 'nonsig_genes', 'NA_genes', 'trans_only')
+
+# set column names for table
+colnames(res_dat) <- c('Total Genes', 'Significant', 'Nonsignificant', 'NA', '\\textit{trans}-only')
 
 # table for report
 res_xtable <- xtable(res_dat,
-	display = rep('d', 7)
+	display = rep('d', 6)
 	)
+
+# table for slides
+print(res_xtable, 
+	include.rownames = TRUE, 
+	booktabs = TRUE, 
+	table.placement = 'H', 
+	sanitize.text.function = function(x){x},
+	caption.placement = 'top',
+	size = '\\footnotesize',
+	append = FALSE,
+	file = here('tables', 'summary_slides.tex'))
+
+# table for report
 caption(res_xtable) <- 'xWAS Association Test Results Summary'
 label(res_xtable) <- 'tab:summary'
 
@@ -237,10 +250,8 @@ print(res_xtable,
 	sanitize.text.function = function(x){x},
 	caption.placement = 'top',
 	append = FALSE,
-	file = here('tex', 'xtables.tex'))
+	file = here('tables', 'summary_report.tex'))
 
-cat('\\pagebreak\n\n', append = TRUE,
-	file = here('tex', 'xtables.tex'))
 
 #############################
 ## RISK GENES TABLES
@@ -261,21 +272,27 @@ for (method in unique(sigtab$method)){
 	sigtab_xtable <- xtable(sigtab_method, 
 		math.style.exponent=TRUE, display=c('d', 'd', 'd',  'd', 's', 'e'), include.rownames=FALSE)
 
+	# method_str <- sub('-', '', 
+	# 	sub('/', '', method, fixed = TRUE), 
+	# 	fixed = TRUE)
+	method_str <- sub('/', '', method, fixed = TRUE)
+
 	caption(sigtab_xtable) <- paste0('AD risk genes identified by ', method)
-	label(sigtab_xtable) <- paste0('tab:', method, '_riskgenes')
+	label(sigtab_xtable) <- paste0('tab:', method_str, '_riskgenes')
+
 
 	print(sigtab_xtable, 
 		include.rownames = FALSE, 
 		booktabs = TRUE, 
-		table.placement = 'H', 
+		floating = FALSE,
 		tabular.environment = 'longtable', 
 		sanitize.text.function = function(x){x},
 		caption.placement = 'top',
-		append = TRUE,
-		file = here('tex', 'xtables.tex'))
+		append = FALSE,
+		file = here('tables', paste0(method_str, '_sig_genes.tex')))
 
 	cat('\\pagebreak\n\n', append = TRUE,
-		file = here('tex', 'xtables.tex'))
+		file = here('tables', paste0(method_str, '_sig_genes.tex')))
 }
 
 #############################
@@ -286,12 +303,18 @@ sig_dat$method <- factor(sig_dat$method,
 		'cis-PWAS', 'cis/trans-PWAS'))
 vennlist <- as.list(by(sig_dat, sig_dat$method, function(x) x[['GeneName']]))
 
-p <- ggVennDiagram(vennlist, label_alpha=0, label='count') + 
-	theme(legend.pos='None') + 
-	scale_fill_gradient(low='white', high='#D92B26') +
-	scale_x_continuous(expand=expansion(mult=0.11)) # expand so long labels fit
-ggsave(here('figs', 'venn.pdf'), p)
+# venn diagram for report
+venn_report <- ggVennDiagram(vennlist, label_alpha = 0, label = 'count') + 
+	theme(legend.pos = 'None') + 
+	scale_fill_gradient(low = 'white', high = '#D92B26') +
+	scale_x_continuous(expand = expansion(mult = 0.11)) # expand so long labels fit
+ggsave(here('figs', 'venn_report.pdf'), venn_report)
 
+# venn diagram for slides
+venn_slides <- venn_report + 
+	theme(rect = element_rect(fill = '#FAFAFA'), 
+		plot.margin = grid::unit(c(0,0,0,0), 'mm'))
+ggsave(here('figs', 'venn_slides.pdf'), venn_slides)
 
 #############################
 # MANHATTAN PLOT

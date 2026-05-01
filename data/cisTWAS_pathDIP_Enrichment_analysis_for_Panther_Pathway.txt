@@ -1,0 +1,19 @@
+Source = 'Panther_Pathway', Results 16 ('q-value (FDR: BH-method) less than 0.05')
+-------------------------------------------
+Pathway Source	Pathway Name	p-value	q-value (FDR: BH-method)	q-value (Bonferroni)	Type	Category
+Panther_Pathway	Insulin/IGF pathway-mitogen activated protein kinase kinase/MAP kinase cascade	2.30621e-03	1.87791e-02	1.31454e-01	Organismal systems	Endocrine system
+Panther_Pathway	Notch signaling pathway	2.21683e-03	2.10599e-02	1.26359e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Nicotinic acetylcholine receptor signaling pathway	2.05235e-03	2.33968e-02	1.16984e-01	Organismal systems	Nervous system
+Panther_Pathway	Ras Pathway	3.75326e-03	2.37706e-02	2.13936e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Alzheimer disease-amyloid secretase pathway	4.46354e-03	2.54422e-02	2.54422e-01	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	EGF receptor signaling pathway	4.49103e-04	2.55989e-02	2.55989e-02	Environmental information processing	Signal transduction
+Panther_Pathway	PDGF signaling pathway	1.80372e-03	2.57030e-02	1.02812e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Alzheimer disease-presenilin pathway	3.70300e-03	2.63839e-02	2.11071e-01	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	PI3 kinase pathway	1.68372e-03	3.19907e-02	9.59720e-02	Environmental information processing	Signal transduction
+Panther_Pathway	Interleukin signaling pathway	6.74462e-03	3.49494e-02	3.84443e-01	Organismal systems	Immune system
+Panther_Pathway	B cell activation	8.47147e-03	4.02395e-02	4.82874e-01	Organismal systems	Immune system
+Panther_Pathway	Interferon-gamma signaling pathway	1.01250e-02	4.12232e-02	5.77125e-01	Organismal systems	Immune system
+Panther_Pathway	Inflammation mediated by chemokine and cytokine signaling pathway	9.69773e-03	4.25208e-02	5.52771e-01	Organismal systems	Immune system
+Panther_Pathway	p53 pathway feedback loops 2	1.51149e-03	4.30775e-02	8.61549e-02	Cellular processes and organization	Cell growth and death
+Panther_Pathway	T cell activation	1.22293e-02	4.35669e-02	6.97070e-01	Organismal systems	Immune system
+Panther_Pathway	Toll receptor signaling pathway	1.16843e-02	4.44003e-02	6.66005e-01	Organismal systems	Immune system

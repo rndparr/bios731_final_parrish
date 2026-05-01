@@ -5,6 +5,7 @@
 
 - [Directories \& Files](#directories-and-files)
 - [Reproducibility](#reproducibility)
+- [Session Info](#session-info)
 - [LaTeX Info](#latex-info)
 
 
@@ -27,7 +28,6 @@
 │    ├── paths_plot.png
 │    ├── paths_venn_report-crop.pdf
 │    ├── venn-crop.pdf
-│    ├── venn_report-crop.pdf
 │    └── xWAS.jpg
 ├── final.sublime-project
 ├── final.sublime-workspace
@@ -51,19 +51,81 @@
 
 ## Reproducibility
 
+
+### Required R packages (local)
+
+- cowplot
+- ggnewscale
+- ggplot2
+- ggrepel
+- ggVennDiagram
+- here
+- reshape2
+- reshape2
+- stringr
+- xtable
+
+```R
+install.packages(c("cowplot", "ggnewscale", "ggplot2", "ggrepel", "ggVennDiagram", "here", "reshape2", "reshape2", "stringr", "xtable"))
+```
+
+
 The report and slides must be compiled with LaTeX, biber run on this output, and then run LaTeX again to compile a PDF with bibliography.
 
 ```bash
-latex report.tex
-latex slides_content.tex
+cd tex
+
+pdflatex -interaction=nonstopmode report.tex
+pdflatex -interaction=nonstopmode slides_handout.tex
+pdflatex -interaction=nonstopmode slides_present.tex
 
 biber report
-biber slides_content
+biber slides_handout
+biber slides_present
 
-latex report.tex
-latex slides_content.tex
+pdflatex -interaction=nonstopmode report.tex
+pdflatex -interaction=nonstopmode slides_handout.tex
+pdflatex -interaction=nonstopmode slides_present.tex
 ```
 
+
+---
+
+## Session Info
+
+```R
+R version 4.5.2 (2025-10-31)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sonoma 14.7
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/New_York
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] xtable_1.8-8          reshape2_1.4.5        here_1.0.2           
+[4] ggVennDiagram_1.5.7   ggnewscale_0.5.2.9000 ggrepel_0.9.8        
+[7] ggplot2_4.0.2        
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       dplyr_1.2.1        compiler_4.5.2     tidyselect_1.2.1  
+ [5] Rcpp_1.1.1         stringr_1.6.0      systemfonts_1.3.2  scales_1.4.0      
+ [9] textshaping_1.0.5  R6_2.6.1           plyr_1.8.9         labeling_0.4.3    
+[13] generics_0.1.4     tibble_3.3.1       rprojroot_2.1.1    pillar_1.11.1     
+[17] RColorBrewer_1.1-3 rlang_1.2.0        stringi_1.8.7      S7_0.2.1          
+[21] cli_3.6.6          withr_3.0.2        magrittr_2.0.5     grid_4.5.2        
+[25] cowplot_1.2.0      lifecycle_1.0.5    vctrs_0.7.3        glue_1.8.1        
+[29] farver_2.1.2       ragg_1.5.2         tools_4.5.2        pkgconfig_2.0.3   
+```
 
 ---
 
@@ -85,4 +147,3 @@ Compiled with libpng 1.6.55; using libpng 1.6.55
 Compiled with zlib 1.3.2; using zlib 1.3.2
 Compiled with xpdf version 4.06
 ```
-

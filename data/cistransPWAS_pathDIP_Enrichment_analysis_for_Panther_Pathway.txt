@@ -1,0 +1,30 @@
+Source = 'Panther_Pathway', Results 27 ('q-value (FDR: BH-method) less than 0.05')
+-------------------------------------------
+Pathway Source	Pathway Name	p-value	q-value (FDR: BH-method)	q-value (Bonferroni)	Type	Category
+Panther_Pathway	Ras Pathway	1.19063e-04	3.81002e-03	3.81002e-03	Environmental information processing	Signal transduction
+Panther_Pathway	Angiotensin II-stimulated signaling through G proteins and beta-arrestin	1.11033e-03	1.18435e-02	3.55306e-02	Organismal systems	Endocrine system
+Panther_Pathway	Interferon-gamma signaling pathway	1.58509e-03	1.26807e-02	5.07229e-02	Organismal systems	Immune system
+Panther_Pathway	Insulin/IGF pathway-mitogen activated protein kinase kinase/MAP kinase cascade	2.07626e-03	1.32881e-02	6.64403e-02	Organismal systems	Endocrine system
+Panther_Pathway	Apoptosis signaling pathway	9.07954e-04	1.45273e-02	2.90545e-02	Cellular processes and organization	Cell growth and death
+Panther_Pathway	B cell activation	3.45256e-03	1.57831e-02	1.10482e-01	Organismal systems	Immune system
+Panther_Pathway	Alzheimer disease-amyloid secretase pathway	3.21836e-03	1.71646e-02	1.02988e-01	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	PDGF signaling pathway	6.89264e-03	2.45072e-02	2.20564e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Toll receptor signaling pathway	6.19818e-03	2.47927e-02	1.98342e-01	Organismal systems	Immune system
+Panther_Pathway	p38 MAPK pathway	1.18757e-02	2.53348e-02	3.80022e-01	Environmental information processing	Signal transduction
+Panther_Pathway	TGF-beta signaling pathway	1.03174e-02	2.53967e-02	3.30157e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Interleukin signaling pathway	1.12685e-02	2.57566e-02	3.60592e-01	Organismal systems	Immune system
+Panther_Pathway	Angiogenesis	8.94954e-03	2.60350e-02	2.86385e-01	Organismal systems	Development and regeneration
+Panther_Pathway	EGF receptor signaling pathway	1.32860e-02	2.65720e-02	4.25152e-01	Environmental information processing	Signal transduction
+Panther_Pathway	FGF signaling pathway	8.35881e-03	2.67482e-02	2.67482e-01	Environmental information processing	Signal transduction
+Panther_Pathway	JAK/STAT signaling pathway	1.03116e-02	2.74976e-02	3.29971e-01	Environmental information processing	Signal transduction
+Panther_Pathway	VEGF signaling pathway	1.81682e-02	3.41990e-02	5.81382e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Parkinson disease	2.14040e-02	3.80516e-02	6.84928e-01	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	FAS signaling pathway	2.49393e-02	4.20030e-02	7.98058e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Integrin signalling pathway	3.03011e-02	4.40743e-02	9.69635e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Oxidative stress response	2.92888e-02	4.46306e-02	9.37242e-01	Cellular processes and organization	Cellular response to stimuli
+Panther_Pathway	T cell activation	3.22161e-02	4.48224e-02	1.00000e+00	Organismal systems	Immune system
+Panther_Pathway	Endothelin signaling pathway	3.83630e-02	4.54673e-02	1.00000e+00	Environmental information processing	Signal transduction
+Panther_Pathway	Inflammation mediated by chemokine and cytokine signaling pathway	2.86786e-02	4.58858e-02	9.17715e-01	Organismal systems	Immune system
+Panther_Pathway	p53 pathway	3.76387e-02	4.63246e-02	1.00000e+00	Cellular processes and organization	Cell growth and death
+Panther_Pathway	Hypoxia response via HIF activation	3.60405e-02	4.80540e-02	1.00000e+00	Environmental information processing	Signal transduction
+Panther_Pathway	Insulin/IGF pathway-protein kinase B signaling cascade	3.60405e-02	4.80540e-02	1.00000e+00	Organismal systems	Endocrine system

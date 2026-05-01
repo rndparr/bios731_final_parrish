@@ -1,0 +1,19 @@
+Source = 'Panther_Pathway', Results 16 ('q-value (FDR: BH-method) less than 0.05')
+-------------------------------------------
+Pathway Source	Pathway Name	p-value	q-value (FDR: BH-method)	q-value (Bonferroni)	Type	Category
+Panther_Pathway	Alzheimer disease-amyloid secretase pathway	1.66992e-04	6.67968e-03	6.67968e-03	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	Inflammation mediated by chemokine and cytokine signaling pathway	9.45498e-04	1.89100e-02	3.78199e-02	Organismal systems	Immune system
+Panther_Pathway	Insulin/IGF pathway-protein kinase B signaling cascade	1.75663e-03	2.34217e-02	7.02652e-02	Organismal systems	Endocrine system
+Panther_Pathway	Parkinson disease	2.39334e-03	2.39334e-02	9.57336e-02	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Panther_Pathway	Ras Pathway	3.85558e-03	2.57039e-02	1.54223e-01	Environmental information processing	Signal transduction
+Panther_Pathway	PI3 kinase pathway	3.49082e-03	2.79266e-02	1.39633e-01	Environmental information processing	Signal transduction
+Panther_Pathway	EGF receptor signaling pathway	5.71418e-03	3.26525e-02	2.28567e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Insulin/IGF pathway-mitogen activated protein kinase kinase/MAP kinase cascade	1.08224e-02	3.60747e-02	4.32896e-01	Organismal systems	Endocrine system
+Panther_Pathway	Nicotinic acetylcholine receptor signaling pathway	1.00633e-02	3.65938e-02	4.02532e-01	Organismal systems	Nervous system
+Panther_Pathway	Notch signaling pathway	7.37376e-03	3.68688e-02	2.94950e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Interferon-gamma signaling pathway	8.37330e-03	3.72147e-02	3.34932e-01	Organismal systems	Immune system
+Panther_Pathway	Interleukin signaling pathway	9.42420e-03	3.76968e-02	3.76968e-01	Organismal systems	Immune system
+Panther_Pathway	Apoptosis signaling pathway	1.36970e-02	4.21446e-02	5.47880e-01	Cellular processes and organization	Cell growth and death
+Panther_Pathway	VEGF signaling pathway	1.71901e-02	4.29753e-02	6.87604e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Hypoxia response via HIF activation	1.54933e-02	4.42666e-02	6.19732e-01	Environmental information processing	Signal transduction
+Panther_Pathway	Endothelin signaling pathway	1.69649e-02	4.52397e-02	6.78596e-01	Environmental information processing	Signal transduction

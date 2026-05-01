@@ -88,7 +88,6 @@
 
     \item[$\rightarrow$\hspace{-1.5em}] \hspace{1em} illustrate biological mechanisms of GWAS risk variants
   \end{itemize}
-% \includegraphics[width=0.75\textwidth]{../drawio_figs/bio_bg_2-xWAS1_1_4.drawio.pdf}
 \note{xWAS to find candidate causal genes in candidate gene analysis following genomewide association studies\\[1em]
 studies ofter lack transcriptomic/proteomic data}
 \end{frame}
@@ -317,21 +316,22 @@ longitudinal prospective clinical-pathologic cohort studies of aging and AD
 
 
 
-\begin{frame}{Results}
-  \begin{table}\footnotesize
-    \begin{tabular}{lrrrr}
-      \toprule
-       &  Total &   Significant &     NA &  \textit{trans}-only \\ \midrule
-      cis-TWAS &  16408 &   130 &      305 &   - \\
-      cis/trans-TWAS &  16676 &   74  &   555 &   298 \\[0.5em]
-      cis-PWAS &  8829 &  25 &   1251 &  - \\
-      cis/trans-PWAS &  8922 &  34  &  1293 &  84 \\
-      \bottomrule
-    \end{tabular}
-  \end{table}    
+\begin{frame}[fragile]{Results}
+  % \begin{table}\footnotesize
+  %   \begin{tabular}{lrrrr}
+  %     \toprule
+  %      &  Total &   Significant &     NA &  \textit{trans}-only \\ \midrule
+  %     cis-TWAS &  16408 &   130 &      305 &   - \\
+  %     cis/trans-TWAS &  16676 &   74  &   555 &   298 \\[0.5em]
+  %     cis-PWAS &  8829 &  25 &   1251 &  - \\
+  %     cis/trans-PWAS &  8922 &  34  &  1293 &  84 \\
+  %     \bottomrule
+  %   \end{tabular}
+  % \end{table}
+  \input{../tables/summary_slides.tex}
   % \onslide<2->{
     \begin{figure}
-      \includegraphics[width=0.65\textwidth]{../figs/venn-crop.pdf}\\
+      \includegraphics[trim={0 3.5cm 0 3.5cm},clip,width=0.65\textwidth]{../figs/venn_slides.pdf}\\
       \textbf{Overlap of Significant Risk Genes}
     \end{figure}
   % }
@@ -403,7 +403,6 @@ cis/trans-PWAS &  0.4\% & 85\% & 14\% \\
     \item BGW-xWAS uses various strategies make this computationally efficient: EM-MCMC, parallel computation, data pruning
      \item application study of AD xWAS identified risk genes previously identified in GWAS
     \item application study of AD xWAS show risk genes significantly enriched for AD-related pathways
-    % \item \textit{cis}/\textit{trans}-xWAS able to identify 
   \end{itemize}
 \end{frame}
 

@@ -221,19 +221,7 @@ After training, the estimated xQTL weights were integrated with AD GWAS data fro
 \section{Results}
 For the TWAS models, we obtained GReX models for 16,408 and 16,676 genes for \textit{cis}- and \textit{cis}/\textit{trans}-TWAS, respectively. For the PWAS models, we obtained GReP models for 8,829 and 8,922 genes for \textit{cis}- and \textit{cis}/\textit{trans}-TWAS, respectively. These results are shown in Table~\ref{tab:summary}. Additionally, the \textit{cis}/\textit{trans}-xWAS methods obtained some \textit{trans}-only gene models: 298 for TWAS and 84 for PWAS. 
 
-\begin{table}[H]\centering
-	\caption{xWAS Association Test Results Summary}
-  \begin{tabular}{lrrrrr}
-    \toprule
-     &  Total Genes &   Significant &  Nonsignificant & NA &  \textit{trans}-only \\ \midrule
-    cis-TWAS &  16408 &   130 &   15973 &   305 &   0 \\
-    cis/trans-TWAS &  16676 &   74 &  16047 &   555 &   298 \\[0.25em]
-    cis-PWAS &  8829 &  25 &  7553 &  1251 &  0 \\
-    cis/trans-PWAS &  8922 &  34 &  7595 &  1293 &  84 \\
-    \bottomrule
-  \end{tabular}
-  \label{tab:summary}
-\end{table}
+\input{../tables/summary_report.tex}
 
 Manhattan plots of the xWAS study results shown in Figure~\ref{fig:manplot}. The xWAS studies identified a total of 263 xWAS significant risk genes of AD: 130 \textit{cis}-TWAS, 74 \textit{cis}/\textit{trans}-TWAS, 25 \textit{cis}-PWAS, and 34 \textit{cis}/\textit{trans}-PWAS risk genes. These significant risk genes are shown in Tables~\labelcref{tab:cis-TWAS_riskgenes,tab:cistrans-TWAS_riskgenes,tab:cis-PWAS_riskgenes,tab:cistrans-PWAS_riskgenes}. Table~\ref{tab:onlycistrans} shows genes identified only by the \textit{cis}/\textit{trans}-xWASs. 
 
@@ -274,7 +262,7 @@ Figure~\ref{fig:venn} shows a venn diagram of overlapping risk genes identified 
 
 \begin{figure}[H]\centering
 \caption{Venn Diagrams of Overlapping xWAS Results}
-  \includegraphics[width=0.8\textwidth]{../figs/venn_report-crop.pdf}
+  \includegraphics[trim={0 3.5cm 0 3.5cm},clip,width=0.8\textwidth]{../figs/venn_report.pdf}
   \label{fig:venn}
 \end{figure}
 
@@ -326,11 +314,77 @@ BGW-TWAS does have some limitations: it assumes a two-stage model for xWASs and 
 
 
 \section{Figures}
-\input{report_figures.tex}
+
+\begin{figure}[H]\centering
+	\caption{Significant Enriched Paths by pathDIP}
+  \includegraphics[width=\textwidth]{../figs/paths_plot.pdf}
+  \label{fig:paths_plot}
+\end{figure}
+
+\begin{figure}[H]\centering
+	\caption{Venn Diagram of Number of Overlapping Paths for each xWAS}
+  \includegraphics[trim={0 3.5cm 0 3.5cm},clip,width=0.8\textwidth]{../figs/paths_venn_report.pdf}
+  \label{fig:paths_venn}
+\end{figure}
 
 
 \section{Tables}
-\input{report_tables.tex}
+
+\input{../tables/overlap_paths.tex}
+
+\begin{table}[H]\centering
+\caption{Risk Genes Identified Only by \textit{cis}/\textit{trans}-xWAS}
+\begin{tabular}{lllll}
+  \toprule
+    CHR & GeneName & TWAS & PWAS & Function\\ 
+    \midrule
+    % 1 & \textit{AL390719.1} &   1 &   0 &   \\ 
+    1 & \textit{FCGR1A} &   0 &   1 &   IgG immune response \\ 
+    1 & \textit{PIK3CD}* &   1 &   0 &  immune response mediation   \\ 
+    1 & \textit{RCSD1} &   0 &   1 &  actin filament binding activity  \\ 
+    1 & \textit{TSNAX} &   0 &   1 &   involved in RNA-induced silencing complex \\ 
+    3 & \textit{APOD}* &   0 &   1 &   lipid transport \\ 
+    3 & \textit{MASP1} &   0 &   1 &  complement system  \\ 
+    3 & \textit{USP4} &   0 &   1 &   ubiquitinating enzyme \\ 
+    5 & \textit{ERAP2} &   1 &   0 &   peptide trimming for HLA class 1-binding peptides \\ 
+    6 & \textit{BTN3A2}* &   1 &   0 &   T-cell responses  \\ 
+    6 & \textit{HLA-B} &   1 &   0 &  major histocompatibility complex class I  \\ 
+    % 6 & \textit{ZNF603P} &   1 &   0 &    \\ 
+    8 & \textit{AF131216.3}* &   1 &   0 &  lncRNA  \\ 
+    8 & \textit{TNKS} &   1 &   0 &   involved in telomere length, vesicle trafficking \\ 
+   11 & \textit{SNX32}* &   1 &   1 &  may be involved in intracellular trafficking  \\ 
+   14 & \textit{ACYP1}** &   0 &   1 &  -  \\ 
+   15 & \textit{CTSH} &   1 &   1 &   degradation of proteins in lysosomes \\ 
+   15 & \textit{HERC1}** &   0 &   1 &  involved in membrane trafficking  \\ 
+   % 15 & \textit{HEXA} &   0 &   1 &    \\ 
+   16 & \textit{KLHL36}* &   1 &   0 &  may be involved in ubiquitination  \\ 
+   16 & \textit{MAPK3} &   0 &   1 & MAP kinase signal transduction pathway   \\ 
+   17 & \textit{FMNL1}** &   0 &   1 &  regulation of cell morphology  \\ 
+   18 & \textit{EPG5} &   1 &   0 &  involved in autophagy  \\ 
+   19 & \textit{KLC3}* &   1 &   0 &   play a role in organelle transport \\ 
+   19 & \textit{SLC27A5} &   1 &   0 &  fatty acid formation  \\ 
+   19 & \textit{TBCB}** &   1 &   0 &   tubulin folding \\ 
+  \bottomrule
+   \multicolumn{5}{l}{\footnotesize $\ast$ previously-identified GWAS risk gene of AD} \\
+    \multicolumn{5}{l}{\footnotesize $\ast\ast$ previously-identified GWAS risk gene of dementia}
+\end{tabular}
+\label{tab:onlycistrans}
+\end{table}
+\pagebreak
+
+\nocite{zotero-item-2967}
+\nocite{stelzerGeneCardsSuiteGene2016}
+
+\input{../tables/cis-TWAS_sig_genes.tex}
+
+\input{../tables/cistrans-TWAS_sig_genes.tex}
+
+\input{../tables/cis-PWAS_sig_genes.tex}
+
+\input{../tables/cistrans-PWAS_sig_genes.tex}
+
+
+
 
 
 \end{appendices}
