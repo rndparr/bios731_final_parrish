@@ -1,0 +1,272 @@
+\usetheme[progressbar=head,block=fill]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{anyfontsize}
+\let\Tiny=\tiny
+
+\usepackage{tikz}
+\usetikzlibrary{snakes,arrows,shapes,arrows.meta}
+
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{layouts}
+\usepackage{nicematrix}
+
+
+\usepackage{caption}
+% % \captionsetup[figure]{labelformat=empty}
+\usepackage[scale=2]{ccicons}
+\usepackage{amsmath}
+\usepackage{bm}
+% \usepackage{hyperref}
+% \makeatletter
+%     \g@addto@macro{\UrlBreaks}{\do\/\do\-\do\_}
+% \makeatother
+% \hypersetup{breaklinks=true}
+
+\usepackage{upgreek}
+\usepackage[table]{xcolor}
+\usepackage{xpatch}
+\usepackage{verbatim}
+\usepackage{realboxes}
+\usepackage{multicol}
+\usepackage{svg}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{longtable}
+\usepackage{upgreek}
+
+
+\newcommand{\boldm}[1] {\mathversion{bold}#1\mathversion{normal}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\mathbf{\boldsymbol{#1}}}
+
+\newcommand*{\Cdot}[1][2]{%
+  \mathpalette{\CdotAux{#1}}\cdot%
+}
+\newdimen\CdotAxis
+\newcommand*{\CdotAux}[3]{%
+  {%
+    \settoheight\CdotAxis{$#2\vcenter{}$}%
+    \sbox0{%
+      \raisebox\CdotAxis{%
+        \scalebox{#1}{%
+          \raisebox{-\CdotAxis}{%
+            $\mathsurround=0pt #2#3$%
+          }%
+        }%
+      }%
+    }%
+    % Remove depth that arises from scaling.
+    \dp0=0pt %
+    % Decrease scaled height.
+    \sbox2{$#2\bullet$}%
+    \ifdim\ht2<\ht0 %
+      \ht0=\ht2 %
+    \fi
+    % Use the same width as the original \cdot.
+    \sbox2{$\mathsurround=0pt #2#3$}%
+    \hbox to \wd2{\hss\usebox{0}\hss}%
+  }%
+}
+
+\newcommand{\listingsfont}{\scriptsize\ttfamily\color{black}}
+\usepackage{listings}
+\lstset{% {}
+  backgroundcolor=\color{white},%\color{bg},
+  basicstyle=\listingsfont,
+  language=Python,
+  breaklines=true,
+  keywordstyle=\color{midnightgreen(eaglegreen)}\bfseries,
+  emphstyle=\color{airforceblue}\bfseries,
+  stringstyle=\color{tealgreen},
+  commentstyle=\rmfamily\slshape\color{ginger},
+  numberstyle=\color{blue},
+  morekeywords={as},
+  otherkeywords={},
+  frame=single,
+  rulecolor=\color{arsenic},
+  tabsize=2,
+  % keepspaces=true,
+  literate=%
+  *{+}{{{\color{oporange}+}}}1
+  {-}{{{\color{oporange}-}}}1
+  {*}{{{\color{oporange}*}}}1
+  {/}{{{\tiny\bfseries\color{oporange}/}}}1
+  {^}{{{\color{oporange}\^{}}}}1
+  {?}{{{\color{oporange}?}}}1
+  {!}{{{\color{oporange}!}}}1
+  {\%}{{{\color{oporange}\%}}}1
+  {<}{{{\color{oporange}<}}}1
+  {>}{{{\color{oporange}>}}}1
+  {|}{{{\color{oporange}|}}}1
+  {\&}{{{\color{oporange}\&}}}1
+  {~}{{{\color{oporange}~}}}1
+  {.}{{{\bfseries\color{oporange}.}}}1
+  {=}{{{\bfseries\color{oporange}=}}}1
+  %
+  {//}{{{\tiny\bfseries\color{oporange}/\!/}}}1
+  %
+  {==}{{{\color{oporange}==}}}2
+  {<=}{{{\color{oporange}<=}}}2
+  {>=}{{{\color{oporange}>=}}}2
+  %
+  {+=}{{{+=}}}2
+  {-=}{{{-=}}}2
+  {*=}{{{$^\ast$=}}}2
+  {/=}{{{/=}}}2
+  {None}{{{\bfseries\color{airforceblue}None}}}4,
+}
+
+% \makeatletter
+% \xpretocmd\lstinline{ \Colorbox{bginlin}\bgroup\appto\lst@DeInit{\egroup} }{}{}
+% \makeatother
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+
+\newcommand{\proglang}{\textsf}
+\newcommand{\smtt}{\small\texttt}
+\newcommand{\pandas}{\smtt{pandas}\ }
+\newcommand{\dfply}{\smtt{dfply}\ }
+\newcommand{\numpy}{\smtt{numpy}\ }
+\newcommand{\tgut}{\smtt{TIGARutils}\ }
+\newcommand{\tgutp}{\smtt{TIGARutils.py}\ }
+
+\DeclareMathOperator*{\minimize}{minimize}
+% \renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+
+% \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+
+\definecolor{blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{bg}{rgb}{0.97, 0.97, 0.97}
+\definecolor{bginlin}{rgb}{0.96, 0.96, 0.96}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{oporange}{rgb}{0.91, 0.41, 0.17}
+\definecolor{ginger}{rgb}{0.69, 0.4, 0.0}
+\definecolor{darkmidnightblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{oxfordblue}{rgb}{0.0, 0.13, 0.28}
+\definecolor{deepjunglegreen}{rgb}{0.0, 0.29, 0.29}
+\definecolor{tealgreen}{rgb}{0.0, 0.51, 0.5}
+\definecolor{prussianblue}{rgb}{0.0, 0.19, 0.33}
+\definecolor{indigo(dye)}{rgb}{0.0, 0.25, 0.42}
+\definecolor{richblack}{rgb}{0.0, 0.25, 0.25}
+\definecolor{midnightgreen(eaglegreen)}{rgb}{0.0, 0.29, 0.33}
+
+%% ORIGINAL COLORS
+\definecolor{sumCol2}{rgb}{0.99,0.99,0.55}
+\definecolor{indCol2}{rgb}{1.0,0.8,0.8}
+\definecolor{trainCol2}{rgb}{0.8,0.92,0.55}
+\definecolor{outCol2}{rgb}{0.8,0.9,1.0}
+\definecolor{tigarCol2}{rgb}{0.93,0.93,0.93}
+%
+
+%% PRESENTATION COLORS
+
+% \colorlet{sumCol}{ginger!40!sumCol2!35}
+% \colorlet{indCol}{oporange!70!indCol2!35}
+% \colorlet{trainCol}{tealgreen!80!trainCol2!35}
+% \colorlet{outCol}{airforceblue!80!outCol2!35}
+% \colorlet{tigarCol}{bginlin} %bginlin
+
+%% PRESENTATION COLORS
+
+\colorlet{sumCol}{ginger!50!sumCol2!33}
+\colorlet{indCol}{oporange!90!indCol2!33}
+\colorlet{trainCol}{tealgreen!90!trainCol2!33}
+\colorlet{outCol}{airforceblue!90!outCol2!33}
+\colorlet{tigarCol}{bginlin} %bginlin
+%
+\colorlet{rosmapCol}{tealgreen!90!sumCol2!33}
+
+
+\usepackage[backend=biber,
+style=numeric,
+citestyle=numeric-comp,
+% citestyle=nature,
+% maxauthors=10,
+eprint=false,
+isbn=false,
+sorting=none]{biblatex}
+\addbibresource{biblio.bib}
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
+\AtBeginBibliography{\scriptsize}
+
+\let\cite=\supercite
+
+
+% add subsections to ToC
+\AtBeginSubsection[]{
+  \frame<beamer>{ 
+    \frametitle{Outline}   
+
+\tableofcontents[currentsection,currentsubsection,sectionstyle=show/hide,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/shaded/shaded]}
+}
+
+
+% slide with reduced margins
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+
+%% bold italic
+\makeatletter
+\DeclareRobustCommand\bfseriesitshape{%
+  \not@math@alphabet\itshapebfseries\relax
+  \fontseries\bfdefault
+  \fontshape\itdefault
+  \selectfont
+}
+\makeatother
+
+\DeclareTextFontCommand{\textbfit}{\bfseriesitshape}
+
+% \usepackage{hyperref}
+\makeatletter
+    \g@addto@macro{\UrlBreaks}{\do\/\do\-\do\_}
+\makeatother
+\hypersetup{breaklinks=true}
+
+% \usepackage{breakurl}
+\usepackage{xurl}
+
+
+\newcommand{\N}[1]{\textsl{N}\!\left(#1\right)}
+\newcommand{\Nm}[2]{\textsl{N}_{#1}\!\left(#2\right)}
+\newcommand{\probs}[1]{\textnormal{Pr}\!\left\lbrace#1\right\rbrace}
+\newcommand{\probss}[2]{\textnormal{Pr}_{#1}\!\left(#2\right)}
+\newcommand{\ex}[1]{\textnormal{E}\!\left\lbrace#1\right\rbrace}
+\newcommand{\exc}[2]{\textnormal{E}_{#1}\!\left[#2\right]}
+\newcommand{\var}[1]{\textnormal{Var}\!\left(#1\right)}
+\newcommand{\cov}[1]{\textnormal{Cov}\!\left(#1\right)}
+\newcommand{\mse}[1]{\textnormal{MSE}\!\left(#1\right)}
+\newcommand{\bias}[1]{\textnormal{Bias}\!\left(#1\right)}
+
+
