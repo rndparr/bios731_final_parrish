@@ -97,6 +97,15 @@
 install.packages(c("cowplot", "ggnewscale", "ggplot2", "ggrepel", "ggVennDiagram", "here", "reshape2", "reshape2", "stringr", "xtable"))
 ```
 
+### Making Tables and Figures
+
+```R
+Rscript ./source/asso_study_results.R
+Rscript ./source/pathDIP_results.R
+# note that manhattan_plots.R is used by asso_study_results.R but should not be called directly
+```
+
+### Compiling the Report and Slides
 
 The report and slides must be compiled with LaTeX, biber run on this output, and then run LaTeX again to compile a PDF with bibliography.
 
