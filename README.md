@@ -5,7 +5,7 @@
 
 - [Directories \& Files](#directories-and-files)
 - [Reproducibility](#reproducibility)
-- [Session Info](#session-info)
+- [R Session Info](#R-session-info)
 - [LaTeX Info](#latex-info)
 
 
@@ -99,7 +99,7 @@ install.packages(c("cowplot", "ggnewscale", "ggplot2", "ggrepel", "ggVennDiagram
 
 ### Making Tables and Figures
 
-```R
+```bash
 Rscript ./source/asso_study_results.R
 Rscript ./source/pathDIP_results.R
 # note that manhattan_plots.R is used by asso_study_results.R but should not be called directly
