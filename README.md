@@ -18,26 +18,46 @@
 ```
 .
 ├── README.md
+├── data
+│   ├── ProteinAbundance_ROSMAP_annot.txt
+│   ├── TranscriptAbundance_ROSMAP_annot.txt
+│   ├── cis_PWAS_results.txt
+│   ├── cis_TWAS_results.txt
+│   ├── cistrans_PWAS_results.txt
+│   ├── cistrans_TWAS_results.txt
+│   ├── cisPWAS_pathDIP_Enrichment_analysis_for_Panther_Pathway.txt
+│   ├── cisTWAS_pathDIP_Enrichment_analysis_for_Panther_Pathway.txt
+│   ├── cistransPWAS_pathDIP_Enrichment_analysis_for_Panther_Pathway.txt
+│   └── cistransTWAS_pathDIP_Enrichment_analysis_for_Panther_Pathway.txt
 ├── drawio_figs
-│    ├── bio_bg_2-1.drawio.pdf
-│    ├── bio_bg_2-GWAS_2bg.pdf
-│    ├── bio_bg_2-Two_Step_xWAS_1.drawio.pdf
+│   ├── bio_bg_2-1.drawio.pdf
+│   ├── bio_bg_2-GWAS_2bg.pdf
+│   └── bio_bg_2-Two_Step_xWAS_1.drawio.pdf
 ├── figs
-│    ├── manplots_report.png
-│    ├── manplots_slides.png
-│    ├── paths_plot.png
-│    ├── paths_venn_report-crop.pdf
-│    ├── venn-crop.pdf
-│    └── xWAS.jpg
-├── final.sublime-project
-├── final.sublime-workspace
+│   ├── manplots_report.png
+│   ├── manplots_slides.png
+│   ├── paths_plot.pdf
+│   ├── paths_venn_report.pdf
+│   ├── venn_report.pdf
+│   ├── venn_slides.pdf
+│   └── xWAS.jpg
+├── source
+│   ├── asso_study_results.R
+│   ├── manhattan_plot.R
+│   └── pathDIP_results.R
+├── tables
+│   ├── cis-PWAS_sig_genes.tex
+│   ├── cis-TWAS_sig_genes.tex
+│   ├── cistrans-PWAS_sig_genes.tex
+│   ├── cistrans-TWAS_sig_genes.tex
+│   ├── overlap_paths.tex
+│   ├── summary_report.tex
+│   └── summary_slides.tex
 └── tex
     ├── abbrvnat-maxbibnames4_sortnumeric.bst
     ├── biblio.bib
     ├── report.pdf
     ├── report.tex
-    ├── report_figures.tex
-    ├── report_tables.tex
     ├── slides_content.tex
     ├── slides_formatting.tex
     ├── slides_handout.pdf
